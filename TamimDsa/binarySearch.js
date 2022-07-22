@@ -1,4 +1,5 @@
 //the funtion
+//binary search er time complexity O(n) ,space complexity O(1)
 const binarySearch = (myArray, elementToSearch) => {
     let left = 0;
     let right = myArray.length - 1;
