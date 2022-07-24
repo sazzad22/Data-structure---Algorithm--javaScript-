@@ -8,9 +8,23 @@ const binarySearch = (myArray, elementToSearch) => {
     //as long as left is less than right;
     while (left <= right) {
         mid = Math.floor((left + right) / 2);
-        console.log(mid)
+        // console.log(mid)
         if (myArray[mid] === elementToSearch) {
-            return mid;
+            let ans = [];
+            let i = mid - 1;
+            let j = mid + 1;
+            while (i > -1 && myArray[i] == elementToSearch) {
+                
+                i--;
+            }
+            while (j < myArray.length && myArray[j] == elementToSearch) {
+                
+                j++
+            }
+            while (++i < j) {
+                ans.push(i);
+            }
+            return ans
         }
         if (myArray[mid] < elementToSearch) {
             left = mid + 1;
@@ -23,4 +37,4 @@ const binarySearch = (myArray, elementToSearch) => {
 }
 
 //calling the func
-console.log(binarySearch([1, 2, 3, 4, 5, 6], 6))
+console.log(binarySearch([1, 2, 4, 4, 5, 6],4))
