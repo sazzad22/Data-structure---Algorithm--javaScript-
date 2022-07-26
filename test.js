@@ -1,63 +1,17 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- */
-
-const selectionSort = (nums) => {
-  for (let i = 0; i < nums.length; i++) {
-    let indexMin = i;
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[indexMin] > nums[j]) {
-        indexMin = j;
+var repeatedCharacter = function(s) {
+  let L = -1;
+  for(let i=0; i<s.length;i++){
+      for (let j=i+1; j<s.length;j++){
+          if(s[i]==s[j]){
+              L=i;
+              break
+          }
       }
-    }
-    if (indexMin != i) {
-      let temp = nums[i];
-      nums[i] = nums[indexMin];
-      nums[indexMin] = temp;
-    }
+      if(L!=-1){
+          break;
+      }
   }
-  return nums;
+  return s[L];
 };
-
-const binarySearch = (nums, target) => {
-  let left = 0;
-  console.log(nums);
-  let right = nums.length - 1;
-  let mid;
-  while (left <= right) {
-    mid = Math.floor((left + right) / 2);
-    console.log(nums[mid]);
-    console.log(mid);
-    if (nums[mid] === target) {
-      let ans = [];
-      console.log(ans);
-      let i = mid - 1;
-      let j = mid + 1;
-      while (i > -1 && nums[i] == target) {
-        i--;
-      }
-      while (j < nums.length && nums[j] == target) {
-        j++;
-      }
-      while (++i < j) {
-        ans.push(i);
-      }
-      return ans;
-    }
-    if (nums[mid] < target) {
-      left = mid + 1;
-    } else {
-      right = mid - 1;
-    }
-  }
-  return [-1];
-};
-
-var targetIndices = function (nums, target) {
-  const sortedArray = nums.sort();
-  return binarySearch(sortedArray, target);
-};
-const myArray = [1, 2, 2, 3, 5];
-console.log(targetIndices(myArray, 5)); // [ 4 ]
+const myString = 'abccdeff';
+console.log(repeatedCharacter(myString))
