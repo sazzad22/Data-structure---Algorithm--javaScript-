@@ -13,6 +13,7 @@ const selectionSort = (unsortedArray) => {
             }
         }
         if (indexMin !== i) {
+            //swapping between unsortedArray[i] and unsortedArray[indexMin];
             let temp = unsortedArray[i];
             unsortedArray[i] = unsortedArray[indexMin];
             unsortedArray[indexMin] = temp;

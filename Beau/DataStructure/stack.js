@@ -1,17 +1,21 @@
 // todo Stack
 /* 
+
+Stacks is a data structure where the last entered data is the first to come out. Also know as Last-in, First-out (LIFO).
+
 Stack is service - has first in first out - funtions- push,pop,peek,length
 */
 
-let letters = []; //this is our stack
-let word = "racecare";
+let letters = []; //this is our stack - checking if the word is a palindrome
+let word = "odo";
 let rword = "";
 // for (let i = 0; i < word.length; i++){
 //     letters.push(word[i])
 // }
-const something = Object.values(word).map((w) => letters.push(w));
+const func1 = Object.values(word).map((w) => letters.push(w)); //func1 takes letters of word in the letters array
 
-const func2 = Object.values(word).map(() => rword += letters.pop())
+const func2 = Object.values(word).map(() => rword += letters.pop())// func2 takes the letters in letters array and shoves then in rword in reversed order .
+console.log(func2);
 
 rword === word ? console.log(word, ' is a palindrome') : console.log(word, ' is NOT a palindrome');
 

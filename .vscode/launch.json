@@ -2,6 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Launch javaTest",
+      "request": "launch",
+      "mainClass": "javaTest",
+      "projectName": "DSA_e2b6f0ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch helloWorld",
+      "request": "launch",
+      "mainClass": "helloWorld",
+      "projectName": "DSA_e2b6f0ac"
+    },
+    {
       "type": "pwa-node",
       "request": "launch",
       "name": "Launch Program",
